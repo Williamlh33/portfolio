@@ -1,0 +1,54 @@
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="icon" type="image/png" href="{{ asset('build/images/logo-wild-code-school.svg') }}"/>
+		<title>
+			{% block title %}Projet 3 Name
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}			
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+	<header>
+		{% block nav %}
+			{% include 'includes/_nav.html.twig' %}
+		{% endblock %}
+	</header>
+	<body>
+		<section class="section_accueil" id="section_accueil">
+			<div class="ensemble_div">
+				<div class="div_corner-left-top">
+					<svg class="corner-left-top" id="corner-left-top" xmlns="http://www.w3.org/2000/svg" width="141" height="141" viewbox="0 0 141 141" fill="none">
+						<path d="M0 0H30V70.5V141H0V0Z" fill="#253F45"/>
+						<rect y="30" width="30" height="141" transform="rotate(-90 0 30)" fill="#253F45"/>
+					</svg>
+				</div>
+				<div class="titre">
+					<h1 class="title_accueil">William LHERM</h1>
+					<h2>Développeur web</h2>
+				</div>
+				<div class="div_corner-right-bottom">
+					<svg class="corner-right-bottom" id="corner-right-bottom" xmlns="http://www.w3.org/2000/svg" width="141" height="141" viewbox="0 0 141 141" fill="none">
+						<path d="M111 0H141V70.5V141H111V0Z" fill="#253F45"/>
+						<path d="M0 141L0 111H141V141H82.5H0Z" fill="#253F45"/>
+					</svg>
+				</div>
+			</div>
+			</section>
+			{% block content %}
+            {{ include('includes/_aboutme.html.twig') }}
+			{{ include('includes/_projets.html.twig') }}
+			{{ include('includes/_formContact.html.twig') }}
+            {% endblock %}
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

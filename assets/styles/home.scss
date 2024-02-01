@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@font-face {
+    font-family: "BebasNeue-Regular";
+    src: url(../fonts/BebasNeue-Regular.ttf) format('truetype'),        
+}
+
+body {    
+  background-color: #122023;
+}
+
+.uk-navbar-container {
+    position: fixed;
+    display: block;    
+    width: 100%;
+    
+}
+
+.uk-navbar-left li a {
+    color: #d9d9d9;
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-family: "BebasNeue-Regular";
+}
+
+.uk-navbar-left li a:hover {
+  color: #F3EDBC;
+  font-weight: 400;
+  font-size: 1.5rem;
+  font-family: "BebasNeue-Regular";
+  transition: text-decoration 0.3s;
+  text-decoration: underline;
+}
+
+.ensemble_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+    text-align: center;
+    padding-top: 20vh;    
+  }
+  
+  .corner-left-top {
+    margin-right: 60rem; 
+  }
+  
+  .corner-right-bottom {
+    margin-left: 60rem;
+  }
+  
+  .title_accueil {
+    font-size: 6rem;
+    margin: 0;
+    color: #d9d9d9;
+    font-family: "BebasNeue-Regular";
+  }
+  
+  h2 {
+    font-size: 3rem;
+    margin: 0;
+    color: #d9d9d9;
+    font-family: "BebasNeue-Regular"
+  
+  }  
+  
+  body::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: rgb(100,12,10);
+    background: linear-gradient(180deg, rgba(100,12,10,0) 0%, rgba(246,194,8,1) 50%, rgba(100,12,10,0) 100%);
+    /*background: rgb(100,12,10);
+    background: linear-gradient(180deg, rgba(100,12,10,0) 0%, rgba(243,237,188,1) 50%, rgba(100,12,10,0) 100%); */
+  }
+
+  .carré {
+    width: 40rem;
+    height: 40rem;    
+    border: 5px solid #F3EDBC;
+    background-color: #253F45;
+    color: #d9d9d9;
+    font-size: 1.5rem;
+    padding: 2%;
+    font-family: Roboto;    
+  }
+
+  .ensemble_carré {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30vh; 
+    text-align: center;      
+  }
+
+  .h3, mb-3, font-weight-normal{
+    padding-bottom: 20px;
+    font-size: 6rem;    
+    color: #d9d9d9;
+    font-family: "BebasNeue-Regular"
+  }
+
+  .label_login {
+    color: #d9d9d9;
+    font-size: 1.5rem; 
+    font-family: "BebasNeue-Regular"
+  }
+
+  .form-control {
+    color: #253F45;
+    font-size: 1.5rem; 
+    font-family: "BebasNeue-Regular";
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    resize: none;
+
+  }
+
+  textarea {
+    padding-bottom: 8vh;
+  }
+
+  .form_login {
+    display: flex;
+    flex-direction: column;     
+  }
+  
+  .btn, btn-lg, btn-primary {
+    
+    font-size: 1.5rem; 
+    font-family: "BebasNeue-Regular";
+    width: 30%;
+  }
+
+  .corner_aboutme {
+    display: flex;
+    justify-content: right;    
+  }
+
+  .section_aboutme {
+    height: 100vh;
+  }
+
+  .section_projets {
+    height: 100vh;
+  }
+
+  .section_accueil {
+    height: 100vh;
+    
+  }
+
+  .section_contact {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carré_contact {
+    width: 45rem;
+    height: 45rem;    
+    border: 5px solid #F3EDBC;
+    background-color: #253F45;
+    color: #d9d9d9;
+    font-size: 1.5rem;
+    padding: 2%;
+    font-family: Roboto;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    text-align: center;      
+  }
+
+  .label_contact {
+    font-family: Roboto;
+    color: #d9d9d9;
+    font-size: 1.25rem; 
+    letter-spacing: 0.25rem;
+    font-weight: 600;
+   
+  }
