@@ -1,0 +1,30 @@
+<section class="section_aboutme" id="section_aboutme">
+<div>
+	<svg  id="corner-left-top" xmlns="http://www.w3.org/2000/svg" width="141" height="141" viewbox="0 0 141 141" fill="none">
+		<path d="M0 0H30V70.5V141H0V0Z" fill="#253F45"/>
+		<rect y="30" width="30" height="141" transform="rotate(-90 0 30)" fill="#253F45"/>
+	</svg>
+</div>
+<div class="titre_aboutme">
+<h2>A propos de moi</h2>
+<h2>Compétences</h2>
+</div>
+<div class="ensemble_carré">	
+	<div class="carré">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus vitae fugit quibusdam perspiciatis quis asperiores! Amet consectetur incidunt ducimus repellendus sequi, cum facilis quisquam, voluptate accusantium eius eum, veniam a.</div>
+	<div class="carré">
+	<div class="ensemble-etiquette_card uk-grid uk-flex uk-flex-center">
+	{% for competence in competences %}
+		 <div class="etiquette_card uk-width-1-2">{{ competence.name }}</div>
+	{% endfor %}
+	</div>
+	</div>
+</div>
+<div>
+<div class="corner_aboutme">
+	<svg  id="corner-right-bottom" xmlns="http://www.w3.org/2000/svg" width="141" height="141" viewbox="0 0 141 141" fill="none">
+		<path d="M111 0H141V70.5V141H111V0Z" fill="#253F45"/>
+		<path d="M0 141L0 111H141V141H82.5H0Z" fill="#253F45"/>
+	</svg>
+    </div>
+</div>
+</section>

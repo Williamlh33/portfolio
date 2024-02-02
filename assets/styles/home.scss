@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@font-face {
+    font-family: "BebasNeue-Regular";
+    src: url(../fonts/BebasNeue-Regular.ttf) format('truetype'),        
+}
+
+body {    
+  background-color: #122023;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.logo_nav {
+  width: 3rem;
+  height: 3rem;
+  display: flex;  
+  align-self: right;  
+  margin-top: 1vh;
+}
+.uk-navbar-container {
+    position: fixed;
+    display: block;    
+    width: 100%;
+    padding-left: 30px;    
+}
+
+.uk-navbar-left li a {
+    color: #d9d9d9;
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-family: "BebasNeue-Regular";
+}
+
+.uk-navbar-nav {
+  width: 100%;
+}
+
+.uk-navbar-left li a:hover {
+  color: #F3EDBC;
+  font-weight: 400;
+  font-size: 1.5rem;
+  font-family: "BebasNeue-Regular";
+  transition: text-decoration 0.3s;
+  text-decoration: underline;
+}
+
+.ensemble_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+    text-align: center;
+    padding-top: 20vh;    
+  }
+  
+  .corner-left-top {
+    margin-right: 60rem; 
+  }
+  
+  .corner-right-bottom {
+    margin-left: 60rem;
+  }
+  
+  .title_accueil {
+    font-size: 6rem;
+    margin: 0;
+    color: #d9d9d9;
+    font-family: "BebasNeue-Regular";
+  }
+  
+  h2 {
+    font-size: 3rem;
+    margin: 0;
+    color: #d9d9d9;
+    font-family: "BebasNeue-Regular";
+    margin-bottom: 4vh;    
+  } 
+  
+  body::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: #122023;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: rgb(100,12,10);
+    background: linear-gradient(180deg, rgba(100,12,10,0) 0%, rgba(246,194,8,1) 50%, rgba(100,12,10,0) 100%);    
+  }
+
+  .carré {
+    width: 40rem;
+    height: 40rem;
+    background-color: #253F45;
+    color: #d9d9d9;
+    font-size: 1.5rem;
+    padding: 2%;
+    font-family: Roboto; 
+    object-fit: contain;
+    border: 8px ridge rgba(243,237,188, 0.7);     
+  }
+
+  .ensemble_carré {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .titre_aboutme {
+    display: flex;
+    justify-content: space-around;
+   
+  }
+
+  .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30vh; 
+    text-align: center;      
+  }
+
+  .h3, mb-3, font-weight-normal{
+    padding-bottom: 20px;
+    font-size: 6rem;    
+    color: #d9d9d9;
+    font-family: "BebasNeue-Regular"
+  }
+
+  .label_login {
+    color: #d9d9d9;
+    font-size: 1.5rem; 
+    font-family: "BebasNeue-Regular"
+  }
+
+  .form-control {
+    color: #253F45;
+    font-size: 1.5rem; 
+    font-family: "BebasNeue-Regular";
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    resize: none;
+  }
+
+  textarea {
+    padding-bottom: 8vh;
+  }
+
+  .form_login {
+    display: flex;
+    flex-direction: column;     
+  }
+  
+  .btn, btn-lg, btn-primary {    
+    font-size: 1.5rem; 
+    font-family: "BebasNeue-Regular";
+    width: 30%;
+    align-self: center;
+  }
+
+  .corner_aboutme {
+    display: flex;
+    justify-content: right;    
+  }
+
+  .section_aboutme {
+    height: 100vh;
+  }
+
+  .section_projets {
+    height: 100vh;
+  }
+
+  .section_accueil {
+    height: 100vh;    
+  }
+
+  .section_contact {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carré_contact {
+    width: 45rem;
+    height: 45rem;  
+    background-color: #253F45;
+    color: #d9d9d9;
+    font-size: 1.5rem;
+    padding: 2%;
+    font-family: Roboto;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    text-align: center;
+    border: 8px ridge rgba(243,237,188, 0.7);      
+  }
+
+  .label_contact {
+    font-family: Roboto;
+    color: #d9d9d9;
+    font-size: 1.25rem; 
+    letter-spacing: 0.25rem;
+    font-weight: 600;   
+  }
+
+  .label-accepte_demandes {
+    background-color: #253F45;   ;
+    color: #d9d9d9;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    padding: 0.5rem 1vw 0.5rem 1vw;
+    width: 60%;
+
+    &:hover {
+        opacity: 0.3;
+        box-shadow: 0px 5px 15px 0px rgba(211, 211, 211, 0.3);
+        transition: 350ms;
+    }
+  }
+
+  .uk-card {
+    background-color: #253F45;
+    color: #d9d9d9!important;
+    font-size: 1.25rem; 
+    letter-spacing: 0.15rem;
+    font-weight: 400;
+    text-align: center;    
+    border: 8px ridge rgba(243,237,188, 0.7);    
+    
+    img {
+      width: auto;
+      height: 10rem;
+      object-fit: contain;
+    }     
+  }  
+
+  h3.uk-card-title {
+    border: none;
+    color: #d9d9d9!important;
+  }
+
+  .toggle-button {
+    background-color: #253F45;   ;
+    color: #d9d9d9;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    padding: 0.5rem 1vw 0.5rem 1vw;
+    width: 45%;
+    font-family: Roboto;
+    font-weight: 400;
+    margin-bottom: 25px;
+
+    &:hover {        
+        color: #d9d9d9;
+        box-shadow: 0px 5px 15px 0px rgba(211, 211, 211, 0.3);
+        transition: 350ms;
+    }
+
+  }
+
+  .etiquette_card {    
+    background-color: #F3EDBC;   ;
+    color: #253F45;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    padding: 0.5rem 1vw 0.5rem 1vw;
+    width: auto;
+    font-family: Roboto;
+    margin-bottom: 15px;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+   
+
+    &:hover {
+      background-color: #253F45;
+        color: #d9d9d9;
+        box-shadow: 0px 5px 15px 0px rgba(211, 211, 211, 0.3);
+        transition: 350ms;
+    }
+  }
+
+  .ensemble-etiquette_card {
+    width: 100%;
+    display: flex;
+    margin: auto;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .corner-left-top {
+      display: none; 
+    }
+    
+    .corner-right-bottom {
+      display: none;
+    }
+
+    .corner_aboutme {
+      display: none;
+    }
+
+    svg#corner-left-top {
+      display: none;
+    }
+
+    .section_aboutme {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .carré{
+      display: flex;
+      flex-direction: column;
+    }
+    }
+
+
+  

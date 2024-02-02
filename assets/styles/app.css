@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "BebasNeue-Regular";
+    src: url(../fonts/BebasNeue-Regular.ttf) format('truetype'),        
+}
+
 body {
     background-color: lightgray;
 }
+
