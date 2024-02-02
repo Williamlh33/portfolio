@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ContactController extends AbstractController
 {
-    #[Route('/', methods: ['GET', 'POST'], name: 'new')]
+    #[Route('/contact', methods: ['GET', 'POST'], name: 'new_contact')]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $contact = new Contact();

@@ -5,9 +5,19 @@
 		<rect y="30" width="30" height="141" transform="rotate(-90 0 30)" fill="#253F45"/>
 	</svg>
 </div>
-<div class="ensemble_carré">
+<div class="titre_aboutme">
+<h2>A propos de moi</h2>
+<h2>Compétences</h2>
+</div>
+<div class="ensemble_carré">	
 	<div class="carré">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus vitae fugit quibusdam perspiciatis quis asperiores! Amet consectetur incidunt ducimus repellendus sequi, cum facilis quisquam, voluptate accusantium eius eum, veniam a.</div>
-	<div class="carré"></div>
+	<div class="carré">
+	<div class="ensemble-etiquette_card uk-grid uk-flex uk-flex-center">
+	{% for competence in competences %}
+		 <div class="etiquette_card uk-width-1-2">{{ competence.name }}</div>
+	{% endfor %}
+	</div>
+	</div>
 </div>
 <div>
 <div class="corner_aboutme">

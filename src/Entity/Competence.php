@@ -19,11 +19,14 @@ class Competence
     private ?string $name = null;
 
     #[ORM\ManyToMany(targetEntity: Projet::class, mappedBy: 'competence')]
-    private Collection $projets;
+    private Collection $projet;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $description = null;
 
     public function __construct()
     {
-        $this->projets = new ArrayCollection();
+        $this->projet = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -46,15 +49,15 @@ class Competence
     /**
      * @return Collection<int, Projet>
      */
-    public function getProjets(): Collection
+    public function getProjet(): Collection
     {
-        return $this->projets;
+        return $this->projet;
     }
 
     public function addProjet(Projet $projet): static
     {
-        if (!$this->projets->contains($projet)) {
-            $this->projets->add($projet);
+        if (!$this->projet->contains($projet)) {
+            $this->projet->add($projet);
             $projet->addCompetence($this);
         }
 
@@ -63,7 +66,7 @@ class Competence
 
     public function removeProjet(Projet $projet): static
     {
-        if ($this->projets->removeElement($projet)) {
+        if ($this->projet->removeElement($projet)) {
             $projet->removeCompetence($this);
         }
 
@@ -73,5 +76,17 @@ class Competence
     public function __toString(): string
     {
         return $this->name;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): static
+    {
+        $this->description = $description;
+
+        return $this;
     }
 }
