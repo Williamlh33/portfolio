@@ -17,6 +17,7 @@
 					</div>
 				</div>
 			{% endfor %}
+			
 		</div>
 	</section>
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -36,7 +37,7 @@ $(document).ready(function() {
 			$(this).text("Afficher moins");
         } else {
             // Sinon, afficher la description tronquée
-            $description.text(fullDescription.slice(0, 50));
+            $description.text(fullDescription.slice(0, 100));
 			$(this).text("Afficher plus");
         }
     });
