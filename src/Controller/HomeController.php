@@ -36,7 +36,7 @@ class HomeController extends AbstractController
         $showProjet = $projetRepository->findAll();
         $showCompetence = $competenceRepository->findAll();
 
-        return $this->render('accueil/index.html.twig', [
+        return $this->render('home/index.html.twig', [
             'competences' => $showCompetence,
             'projets' => $showProjet,
             'formContact' => $form,
