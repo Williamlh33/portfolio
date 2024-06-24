@@ -25,7 +25,6 @@ class ShowController extends AbstractController
 
         return $this->render('accueil/index.html.twig', [
             'competences' => $showCompetence,
-            'test' => 'test',
             'projets' => $showProjet,
             'contacts' => $showContact
         ]);

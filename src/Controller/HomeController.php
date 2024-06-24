@@ -8,7 +8,9 @@ use App\Repository\ProjetRepository;
 use App\Repository\ContactRepository;
 use App\Repository\CompetenceRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,7 +22,8 @@ class HomeController extends AbstractController
         Request $request,
         EntityManagerInterface $entityManager,
         ProjetRepository $projetRepository,
-        CompetenceRepository $competenceRepository
+        CompetenceRepository $competenceRepository,
+        MailerInterface $mailer
     ): Response {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -29,8 +32,22 @@ class HomeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($contact);
             $entityManager->flush();
+            try {
+                $email = (new TemplatedEmail())
+                    ->from($contact->getEmail())
+                    ->to($this->getParameter('mailer_to'))
+                    ->subject('Contact portfolio')
+                    ->htmlTemplate('emails/contact.html.twig')
+                    ->context(['data' => $contact]);
 
-            return $this->redirectToRoute('app_home');
+                $mailer->send($email);
+
+                $this->addFlash('success', 'Votre message a bien été envoyé !');
+
+                return $this->redirectToRoute('app_home');
+            } catch (\Exception $e) {
+                $this->addFlash('danger', 'Impossible d\'envoyer le mail');
+            }
         }
 
         $showProjet = $projetRepository->findAll();
