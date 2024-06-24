@@ -1,17 +1,27 @@
-<section class="section_contact" id="section_contact">
-<div class="carré_contact">
-	<div class="form_login">
-		<h1 class="h3 mb-3 font-weight-normal">Contactez-moi</h1>
-		{{ form_start(formContact) }}
-        <h5 class="label_contact uk-text-uppercase">Votre nom</h5>
-		{{ form_row(formContact.name, {'attr': {'class': 'form-control'}}) }}
-        <h5 class="label_contact uk-text-uppercase">Votre adresse mail</h5>
-		{{ form_row(formContact.email, {'attr': {'class': 'form-control'}}) }}
-        <h5 class="label_contact uk-text-uppercase">Votre message</h5>
-		{{ form_row(formContact.message, {'attr': {'class': 'form-control'}}) }}
 
-		<button type="submit" class="btn button_login mt-5 text-uppercase">Envoyez</button>
-		{{ form_end(formContact) }}
+<section class="section_contact" id="section_contact">
+	<div class="carré_contact">
+		<div class="form_login">
+			<h1 class="h3 mb-3 font-weight-normal">Contactez-moi</h1>
+			{{ form_start(formContact) }}
+			<h5 class="label_contact uk-text-uppercase">Votre nom</h5>
+			{{ form_row(formContact.name, {'attr': {'class': 'form-control'}}) }}
+			<h5 class="label_contact uk-text-uppercase">Votre adresse mail</h5>
+			{{ form_row(formContact.email, {'attr': {'class': 'form-control'}}) }}
+			<h5 class="label_contact uk-text-uppercase">Votre message</h5>
+			{{ form_row(formContact.message, {'attr': {'class': 'form-control'}}) }}
+
+			<button type="submit" class="btn button_login mt-5 text-uppercase" onclick="UIkit.notification({message: 'Primary message…', status: 'primary'})">Envoyez</button>
+			{{ form_end(formContact) }}
+		</div>
+		<button type="button" class="uk-button uk-button-default " onclick="UIkit.notification({message: 'Primary message…', status: 'primary'})">test</button>
 	</div>
-</div>
+	{% for type, messages in app.flashes %}
+	{% for message in messages %}
+		<div class="uk-alert-{{ type }}">
+			{{ message }}
+		</div>
+	{% endfor %}
+	
+{% endfor %}
 </section>

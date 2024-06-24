@@ -11,7 +11,7 @@
         "regenerator-runtime": "^0.13.9",
         "sass": "^1.56.0",
         "sass-loader": "^13.1.0",
-        "webpack": "^5.74.0",
+        "webpack": "^5.92.1",
         "webpack-cli": "^4.10.0",
         "webpack-notifier": "^1.15.0"
     },
@@ -24,6 +24,6 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "uikit": "^3.18.0"
+        "uikit": "^3.21.5"
     }
 }

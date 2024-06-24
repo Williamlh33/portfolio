@@ -2,7 +2,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Découvrez mon portfolio, développeur passionné spécialisé dans le développement web. Explorez mes projets créatifs et innovants, mes compétences techniques, et contactez-moi pour discuter de vos besoins en développement web.">
+		<meta
+		name="description" content="Découvrez mon portfolio, développeur passionné spécialisé dans le développement web. Explorez mes projets créatifs et innovants, mes compétences techniques, et contactez-moi pour discuter de vos besoins en développement web.">
 		{# <link rel="icon" type="image/png" href="{{ asset('build/images/logo-wild-code-school.svg') }}"/> #}
 		<title>
 			{% block title %}Portfolio
@@ -14,7 +15,7 @@
 		{% endblock %}
 
 		{% block javascripts %}
-			{{ encore_entry_script_tags('app') }}
+			{{ encore_entry_script_tags('app') }}			
 		{% endblock %}
 	</head>
 	<header>
@@ -23,6 +24,7 @@
 		{% endblock %}
 	</header>
 	<body>
+		
 		<section class="section_accueil" id="section_accueil">
 			<div class="ensemble_div">
 				<div class="div_corner-left-top">
@@ -44,6 +46,9 @@
 			</div>
 		</section>
 		{% block content %}
+			<button type="button" class="uk-button uk-button-default " onclick="UIkit.notification({message: 'Primary message…', status: 'primary'})">test</button>
+			<button class="demo uk-button uk-button-default" type="button" onclick="UIkit.notification({message: 'Notification message'})">Click me</button>
+
 			{{ include('includes/_aboutme.html.twig') }}
 			{% include 'includes/_projets.html.twig' %}
 			{% include 'includes/_formContact.html.twig' %}
