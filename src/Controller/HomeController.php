@@ -4,8 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use Symfony\Component\Mime\Address;
 use App\Repository\ProjetRepository;
-use App\Repository\ContactRepository;
 use App\Repository\CompetenceRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
@@ -34,7 +35,7 @@ class HomeController extends AbstractController
             $entityManager->flush();
             try {
                 $email = (new TemplatedEmail())
-                    ->from($contact->getEmail())
+                    ->from(new Address($contact->getEmail(), $contact->getName()))
                     ->to($this->getParameter('mailer_to'))
                     ->subject('Contact portfolio')
                     ->htmlTemplate('emails/contact.html.twig')
@@ -42,11 +43,11 @@ class HomeController extends AbstractController
 
                 $mailer->send($email);
 
-                $this->addFlash('success', 'Votre message a bien été envoyé !');
-
-                return $this->redirectToRoute('app_home');
+                return new JsonResponse(['status_mail' => 'success',
+                'message_success' => 'L\'email a bien été envoyé']);
             } catch (\Exception $e) {
-                $this->addFlash('danger', 'Impossible d\'envoyer le mail');
+                return new JsonResponse(['status_mail' => 'errors',
+                'message_error' => 'L\'email n\'a pas pu être envoyé']);
             }
         }
 
@@ -56,7 +57,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'competences' => $showCompetence,
             'projets' => $showProjet,
-            'formContact' => $form,
+            'formContact' => $form->createView(),
         ]);
     }
 }

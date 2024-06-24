@@ -9,9 +9,11 @@ import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons.js';
 
 // loads the Icon plugin
+window.uikit=UIkit;
 UIkit.use(Icons);
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
 
 import './JS/script.js';
+import './JS/error.js';
