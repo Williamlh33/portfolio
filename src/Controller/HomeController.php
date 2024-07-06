@@ -30,24 +30,32 @@ class HomeController extends AbstractController
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($contact);
-            $entityManager->flush();
-            try {
-                $email = (new TemplatedEmail())
-                    ->from(new Address($contact->getEmail(), $contact->getName()))
-                    ->to($this->getParameter('mailer_to'))
-                    ->subject('Contact portfolio')
-                    ->htmlTemplate('emails/contact.html.twig')
-                    ->context(['data' => $contact]);
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $entityManager->persist($contact);
+                $entityManager->flush();
+                try {
+                    $email = (new TemplatedEmail())
+                        ->from(new Address($contact->getEmail(), $contact->getName()))
+                        ->to($this->getParameter('mailer_to'))
+                        ->subject('Contact portfolio')
+                        ->htmlTemplate('emails/contact.html.twig')
+                        ->context(['data' => $contact]);
 
-                $mailer->send($email);
+                    $mailer->send($email);
 
-                return new JsonResponse(['status_mail' => 'success',
-                'message_success' => 'L\'email a bien été envoyé']);
-            } catch (\Exception $e) {
-                return new JsonResponse(['status_mail' => 'errors',
-                'message_error' => 'L\'email n\'a pas pu être envoyé']);
+                    return $this->json(['status_mail' => 'success', 'message_success' => 'L\'email a bien été envoyé']);
+                } catch (\Exception $e) {
+                    return $this->json(['status_mail' => 'warning',
+                    'message_error' => 'L\'email n\'a pas pu être envoyé']);
+                }
+            } else {
+                $errors = [];
+                foreach ($form->getErrors(true) as $error) {
+                    $errors[$error->getOrigin()->getName()] = $error->getMessage();
+                }
+                return $this->json(['status_mail' => 'error',
+                'message_error' => 'L\'email n\'a pas pu être envoyé', 'errors' => $errors]);
             }
         }
 
@@ -57,7 +65,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'competences' => $showCompetence,
             'projets' => $showProjet,
-            'formContact' => $form->createView(),
+            'formContact' => $form,
         ]);
     }
 }

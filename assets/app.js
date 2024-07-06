@@ -17,3 +17,4 @@ import './styles/app.scss';
 
 import './JS/script.js';
 import './JS/error.js';
+import './JS/scroll.js';
