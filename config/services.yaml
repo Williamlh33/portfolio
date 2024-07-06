@@ -6,6 +6,7 @@
 parameters:
 
     mailer_to: '%env(resolve:MAILER_TO)%'
+    
 
 services:
     # default configuration for services in *this* file

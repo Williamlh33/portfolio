@@ -25,7 +25,7 @@ class Contact
 
     #[ORM\Column(length: 50)]
     #[Assert\NotBlank(message: "Mettre un email")]
-    #[Assert\Email(message: "L'email '{{ value }}' n'est pas valide")]
+    #[Assert\Email(message: "L'email '{{ value }}' n'est pas valide", mode: Assert\Email::VALIDATION_MODE_STRICT)]
     #[Assert\Length(
         max: 50,
         maxMessage: "L'email ne peut pas être plus grand que {{ limit }} caractères"

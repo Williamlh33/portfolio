@@ -1,4 +1,5 @@
-<html lang="fr">
+<!DOCTYPE html>
+<html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,15 +47,11 @@
 			</div>
 		</section>
 		{% block content %}
-			<button type="button" class="uk-button uk-button-default " onclick="UIkit.notification({message: 'Primary message…', status: 'primary'})">test</button>
-			<button class="demo uk-button uk-button-default" type="button" onclick="UIkit.notification({message: 'Notification message'})">Click me</button>
-
-			{{ include('includes/_aboutme.html.twig') }}
+			{% include 'includes/_aboutme.html.twig' %}
 			{% include 'includes/_projets.html.twig' %}
 			{% include 'includes/_formContact.html.twig' %}
 		{% endblock %}
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-		<script src="script.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>		
 	</body>
 </html>
